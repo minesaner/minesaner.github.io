@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>doraemon</title>
+	<style>
+		* {
+			margin:0;
+			padding:0;
+			box-sizing:border-box;
+		}
+		.doraemon {
+			position:relative;
+			width:220px;
+			height:370px;
+			margin:0 auto;
+			margin-top:100px;
+		}
+		.head {
+			position:absolute;
+			width:220px;
+			height:210px;
+			border:1px solid rgba(0, 0, 0, .6);
+			border-radius:50%;
+			background-color:#07bbee;
+			box-shadow:3px 3px 6px 0 rgba(0, 0, 0, .6);
+		}
+		.face {
+			position: absolute;
+			bottom: 8px;
+			left: 50%;
+			margin-left: -92px;
+			width: 184px;
+			height: 139px;
+			border: 1px solid #000;
+			border-radius: 50%;
+			background-color: #fff;
+		}
+		.eyes {
+			position:absolute;
+			top:30px;
+			left:50%;
+			margin-left:-50px;
+			width:100px;
+			height:55px;
+		}
+		.eyes .eye {
+			position:relative;
+			width:50%;
+			height:100%;
+			float:left;
+			border:1px solid #000;
+			border-radius:20px;
+			background-color:#fff;
+		}
+		.eye.left:after, .eye.right:after {
+			content:'';
+			position:absolute;
+			top:50%;
+			width:8px;
+			height:8px;
+			background-color:#000;
+			border-radius:50%;
+		}
+		.eye.left:after {
+			right:8px;
+		}
+		.eye.right:after{
+			left:8px;
+		}
+		.nose {
+			position:absolute;
+			top:77px;
+			left:50%;
+			margin-left:-11px;
+			width:22px;
+			height:22px;
+			border:1px solid #000;
+			border-radius:50%;
+			background-color:#f00;
+		}
+		.nose:after {
+			content:'';
+			position:absolute;
+			top:6px;
+			right:5px;
+			box-shadow:0 0 5px 4px rgba(255, 255, 255, .7);
+		}
+		.nose:before {
+			content:'';
+			position:absolute;
+			top:100%;
+			left:50%;
+			margin-left:-1px;
+			width:2px;
+			height:72px;
+			background-color:rgba(0, 0, 0, .7);
+			
+		}
+		.mouth {
+			position: absolute;
+			bottom: -10px;
+			left: 50%;
+			margin-left: -60px;
+			width: 120px;
+			height: 75px;
+			overflow: hidden;
+		}
+		.lip {
+			position:relative;
+			top:-61%;
+			width:100%;
+			height:100%;
+			border:2px solid #000;
+			border-radius:50%;
+		}
+		.beard {
+			position:absolute;
+			top:60px;
+		}
+		.beard.left {
+			left:14px;
+		}
+		.beard.right {
+			right:14px;
+			-webkit-transform:scale(-1, 1);
+			transform:scale(-1, 1);
+		}
+		.beard, .beard:before, .beard:after {
+			display:block;
+			width:40px;
+			height:1px;
+			background-color:#000;
+		}
+		.beard:before {
+			content:'';
+			-webkit-transform:rotate(15deg) translate(-2px, -17px);
+			transform:rotate(15deg) translate(-2px, -17px);
+		}
+		.beard:after {
+			content:'';
+			-webkit-transform:rotate(-15deg) translate(-2px, 17px);
+			transform:rotate(-15deg) translate(-2px, 17px);
+		}
+		.scarf {
+			position: absolute;
+			top: 195px;
+			left: 50%;
+			margin-left: -80px;
+			width: 160px;
+			height: 16px;
+			border: 1px solid #000;
+			border-radius: 8px;
+			background-color: #f00;
+		}
+		.bell {
+			position:absolute;
+			top:195px;
+			left:50%;
+			margin-left:-15px;
+			width:30px;
+			height:30px;
+			border:1px solid #000;
+			border-radius:50%;
+			background-color:#ff0;
+			overflow:hidden;
+		}
+		.bell:before {
+			content:'';
+			display:block;
+			position:relative;
+			width:110%;
+			height:2px;
+			border:1px solid #000;
+			top:6px;
+		}
+		.bell .hole {
+			position:absolute;
+			bottom:8px;
+			left:50%;
+			margin-left:-4px;
+			width:8px;
+			height:8px;
+			border-radius:50%;
+			background-color:#000;
+		}
+		.bell .hole:after {
+			content:'';
+			position:absolute;
+			top:100%;
+			left:50%;
+			margin-left:-1px;
+			width:2px;
+			height:8px;
+			background-color:#000;
+		}
+		.body {
+			position:absolute;
+			top:197px;
+			left:50%;
+			margin-left:-76px;
+			width:152px;
+			height:120px;
+			background-color:#07bbee;
+			border:1px solid #000;
+		}
+		.venter-wrapper {
+			position:relative;
+			width:100%;
+			height:118px;
+			background-color:#07bbee;
+		}
+		.venter {
+			margin:0 auto;
+			width:118px;
+			height:100%;
+			overflow:hidden;
+		}
+		.belly {
+			position:relative;
+			top:-20px;
+			width:100%;
+			height:100%;
+			border:1px solid #000;
+			border-radius:50%;
+			background-color:#fff;
+		}
+		.pocket {
+			position:relative;
+			top:-78px;
+			margin:0 auto;
+			width:90px;
+			height:45px;
+			border-top:1px solid #000;
+			overflow:hidden;
+		}
+		.pocket:after {
+			content:'';
+			display:block;
+			box-sizing:border-box;
+			margin-top:-46px;
+			width:90px;
+			height:90px;
+			border:1px solid #000;
+			border-radius:50%;
+		}
+		.arm {
+			position:absolute;
+			top:10px;
+			width:35px;
+			height:55px;
+			border:1px solid #000;
+			border-top:0;
+			background-color:#07bbee;
+		}
+		.arm:after {
+			content:'';
+			position:absolute;
+			bottom:-20px;
+			left:50%;
+			margin-left:-20px;
+			width:40px;
+			height:40px;
+			border:1px solid #000;
+			border-radius:50%;
+			background-color:#fff;
+		}
+		.arm.left {
+			left:-30px;
+			transform:rotate(50deg);
+			-webkit-transform:rotate(50deg);
+			animation:shake-left-arm .5s linear infinite alternate;
+			-webkit-animation:shake-left-arm .5s linear infinite alternate;
+		}
+		.arm.right {
+			right:-30px;
+			transform:rotate(-50deg);
+			-webkit-transform:rotate(-50deg);
+			animation:shake-right-arm .5s linear infinite alternate;
+			-webkit-animation:shake-right-arm .5s linear infinite alternate;
+		}
+		.pot {
+			position:absolute;
+			bottom:-1px;
+			left:50%;
+			margin-left:-7px;
+			width:14px;
+			height:7px;
+			overflow:hidden;
+		}
+		.pot:after {
+			content:'';
+			box-sizing:border-box;
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:14px;
+			border:1px solid #000;
+			border-radius:50%;
+			background-color:#fff;
+		}
+		.footer {
+			position:absolute;
+			bottom:-18px;
+			width:83px;
+			height:20px;
+			border:1px solid #000;
+			border-radius:10px;
+			background-color:#fff;
+		}
+		.footer.left {
+			left:-10px;
+		}
+		.footer.right {
+			right:-10px;
+		}
+		@keyframes shake-left-arm {
+			0% {
+				transform:rotate(45deg);
+				-webkit-transform:rotate(45deg);
+			}
+			100% {
+				transform:rotate(55deg);
+				-webkit-transform:rotate(55deg);
+			}
+		}
+		@-webkit-keyframes shake-left-arm {
+			0% {
+				transform:rotate(45deg);
+				-webkit-transform:rotate(45deg);
+			}
+			100% {
+				transform:rotate(55deg);
+				-webkit-transform:rotate(55deg);
+			}
+		}
+		@keyframes shake-right-arm {
+			0% {
+				transform:rotate(-45deg);
+				-webkit-transform:rotate(-45deg);
+			}
+			100% {
+				transform:rotate(-55deg);
+				-webkit-transform:rotate(-55deg);
+			}
+		}
+		@-webkit-keyframes shake-right-arm {
+			0% {
+				transform:rotate(-45deg);
+				-webkit-transform:rotate(-45deg);
+			}
+			100% {
+				transform:rotate(-55deg);
+				-webkit-transform:rotate(-55deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="doraemon">
+		<!--head-->
+		<div class="head">
+			<div class="face">
+				<div class="beard left"></div>
+				<div class="beard right"></div>
+			</div>
+			<div class="eyes">
+				<div class="eye left"></div>
+				<div class="eye right"></div>
+			</div>
+			<div class="nose"></div>
+			<div class="mouth">
+				<div class="lip"></div>
+			</div>
+		</div>
+		<!--/head-->
+		<!--body-->
+		<div class="body">
+			<div class="arm left"></div>
+			<div class="arm right"></div>
+			<div class="venter-wrapper">
+				<div class="venter">
+					<div class="belly"></div>
+					<div class="pocket"></div>
+				</div>
+			</div>
+			<div class="pot"></div>
+			<div class="footer left"></div>
+			<div class="footer right"></div>
+		</div>
+		<!--/body-->
+		<!--scarf-->
+		<div class="scarf"></div>
+		<!--/scarf-->
+		<!--bell-->
+		<div class="bell">
+			<div class="hole"></div>
+		</div>
+		<!--/bell-->
+	</div>
+</body>
+</html>
