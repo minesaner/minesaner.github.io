@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>技术支持</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .mailto {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 14px;
+      color: #333;
+      display: none;
+    }
+    .mailto a {
+      font-size: 18px;
+      padding-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="mailto" id="zh">请发送邮件到<a href="mailto:minesaner@163.com">minesaner@163.com</a></div>
+  <div class="mailto" id="en">Please send email to<a href="mailto:minesaner@163.com">minesaner@163.com</a></div class="mailto">
+  <script>
+    if (navigator.language && navigator.language.startsWith && navigator.language.startsWith('zh')) {
+      document.getElementById('zh').style.display = 'block'
+    } else {
+      document.getElementById('en').style.display = 'block'
+    }
+  </script>
+</body>
+</html>

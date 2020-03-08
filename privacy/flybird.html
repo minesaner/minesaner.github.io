@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FlyBird-Privacy Policy</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="zh" style="display: none;">
+    <div class="title">隐私政策</div>
+    <div class="subtitle">信息使用</div>
+    <div class="content">
+      1.本软件的原则是尊重用户、尊重隐私<br>
+      2.所有信息都只会存储在您的私人 iCloud 和您的设备上<br>
+      3.本软件不会将您的信息进行分享、披露给第三方<br>
+    </div>
+  </div>
+  <div id="en" style="display: none;">
+    <div class="title">Privacy Policy</div>
+    <div class="subtitle">Use of information</div>
+    <div class="content">
+      1.The principle of this software is to respect the users and their privacy.<br>
+      2.All information will only be stored on your private iCloud and your device.<br>
+      3.This software will not share and disclose your information to third parties.<br>
+    </div>
+  </div>
+  <script>
+    if (navigator.language && navigator.language.startsWith && navigator.language.startsWith('zh')) {
+      document.getElementById('zh').style.display = 'block'
+    } else {
+      document.getElementById('en').style.display = 'block'
+    }
+  </script>
+</body>
+</html>
